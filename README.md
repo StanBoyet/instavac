@@ -52,3 +52,5 @@ Never a fan of putting business logic in the views, and it feels that way with t
 - Twitter
   - In-stream image: 440 x 220
 - https://moz.com/blog/meta-data-templates-123
+
+8. Async processing

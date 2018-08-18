@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
 
   has_one_attached :image
-
-
+  after_create :process_variants
+  
   def thumbnail
     self.image.variant(resize: "350x230").processed
   end
@@ -17,6 +17,12 @@ class Post < ApplicationRecord
   
   def twitter_share
     self.image.variant(resize: "440x220").processed
+  end
+
+  private
+
+  def process_variants
+    CreatePostVariantsJob.perform_later(self.id)
   end
 
 end
