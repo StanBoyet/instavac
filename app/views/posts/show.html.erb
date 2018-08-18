@@ -1,5 +1,6 @@
 
 <% content_for :post_title, @post.title %>
+<% content_for :post_url, post_url(@post) %>
 <% content_for :post_facebook_share_url, polymorphic_url(@post.facebook_share) %>
 <% content_for :post_twitter_share_url, polymorphic_url(@post.twitter_share) %>
 
@@ -31,7 +32,7 @@
           </div>
 
           <div class="fb-share-button" 
-            data-href="<%= url_for(@post) %>" 
+            data-href="<%= post_url(@post) %>" 
             data-layout="button_count">
           </div>
         </div>
