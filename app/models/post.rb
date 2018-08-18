@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
 
   has_one_attached :image
-  after_create :process_variants
-  
+  after_save :process_variants
+
   def thumbnail
     self.image.variant(resize: "350x230").processed
   end
