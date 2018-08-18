@@ -1,6 +1,9 @@
-<h1>Editing Post</h1>
-
-<%= render 'form', post: @post %>
-
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Edit Post</h1>
+    <p class="lead text-muted">Let's <s>create</s> edit it to something <em>even more</em> amazing</p>
+    <p>
+      <%= render 'form', post: @post %>
+    </p>
+  </div>
+</section>
