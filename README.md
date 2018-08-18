@@ -27,6 +27,28 @@
 
 
 5. Image processing
+- https://guides.rubyonrails.org/active_storage_overview.html#transforming-images
+- gem 'mini_magick', '~> 4.8'
+- Synchronous Lazy processing in the views
+  - image_tag(post.image.variant(resize: '350x230'))
+  - image_tag(post.image.variant(resize: '730x430'))
+
+6. Named variants
+Never a fan of putting business logic in the views, and it feels that way with the "Rails way" of using variants
+- ```
+    def thumbnail
+      self.image.variant(resize: "350x230").processed
+    end
+  ```
+- image_tag(post.thumbnail)
+
+
+
+
+7. Social experiments
+- update routes.rb   default_url_options(:host => "127.0.0.1:3000")
+- use polymorphic_url(post.image.thumbnail) to link to external -> request to your server
+- https://moz.com/blog/meta-data-templates-123
 - Dimensions for social medias: https://blog.hubspot.com/marketing/ultimate-guide-social-media-image-dimensions-infographic
 - Facebook
   - `Shared link preview image: 1200 x 628`

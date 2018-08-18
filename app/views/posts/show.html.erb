@@ -4,7 +4,7 @@
     <p id="notice"><%= notice %></p>
     <div class="row" style="align-items: center;">
       <div class="col-sm-8">
-        <%= image_tag(@post.image, style: "width: 100%; display: block;")%>
+        <%= image_tag(@post.image.variant(resize: "730x430"), style: "width: 100%; display: block;")%>
       </div>
       <div class="col-sm-4">
         <p class="lead">
