@@ -1,4 +1,8 @@
 
+<% content_for :post_title, @post.title %>
+<% content_for :post_facebook_share_url, polymorphic_url(@post.facebook_share) %>
+<% content_for :post_twitter_share_url, polymorphic_url(@post.twitter_share) %>
+
 <section class="jumbotron text-center">
   <div class="container">
     <p id="notice"><%= notice %></p>
@@ -13,6 +17,26 @@
         <p class="font-weight-light font-italic">
           <%= l(@post.created_at, format: :short) %>
         </p>
+
+        <div class=social-share>
+          <div class="twitter">
+            <a href="http://twitter.com/share"
+              class="twitter-share-button"
+              data-url="<%= post_url(@post) %>"
+              data-text="<%= @post.title %>"
+              data-count="horizontal"
+              data-via="instavac">Tweet
+            </a>
+            <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+          </div>
+
+          <div class="fb-share-button" 
+            data-href="<%= url_for(@post) %>" 
+            data-layout="button_count">
+          </div>
+        </div>
+
+
         <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-primary btn-sm' %>
         <%= link_to 'Back', posts_path, class: 'btn btn-secondary btn-sm' %>
       </div>

@@ -13,3 +13,15 @@ label {
 .jumbotron {
   margin-bottom: 0;
 }
+
+.social-share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  .twitter iframe{
+    margin-bottom: -6px;
+  }
+
+}

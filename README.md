@@ -43,14 +43,12 @@ Never a fan of putting business logic in the views, and it feels that way with t
 - image_tag(post.thumbnail)
 
 
-
-
 7. Social experiments
 - update routes.rb   default_url_options(:host => "127.0.0.1:3000")
 - use polymorphic_url(post.image.thumbnail) to link to external -> request to your server
-- https://moz.com/blog/meta-data-templates-123
 - Dimensions for social medias: https://blog.hubspot.com/marketing/ultimate-guide-social-media-image-dimensions-infographic
 - Facebook
   - `Shared link preview image: 1200 x 628`
 - Twitter
   - In-stream image: 440 x 220
+- https://moz.com/blog/meta-data-templates-123
